@@ -23,4 +23,27 @@ export class ProductFormComponent extends AppComponent {
         componentHandler.upgradeElements(this);
     }
 
+    bindElements() {
+        this.submitBtn = this.querySelector('button');
+        this.nameInput = this.querySelector('#product-name');
+        this.priceInput = this.querySelector('#product-price');
+    }
+
+    bindEvents() {
+        this.submit();
+    }
+
+    submit() {
+        this.submitBtn.addEventListener('click', () => {
+            const product = {
+                name: this.nameInput.value,
+                price: this.priceInput.value
+            }
+            console.log('Form submit', product);
+
+            let myEvent = new CustomEvent('product-submit', { detail: product });
+            document.dispatchEvent(myEvent);
+        })
+    }
+
 }

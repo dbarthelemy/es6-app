@@ -6,13 +6,13 @@ export class AppComponent extends HTMLElement {
     connectedCallback() {
         console.log('Component added to page');
         this.display();
-        this.bindElement();
-        this.bindEvent();
+        this.bindElements();
+        this.bindEvents();
         this.ready();
     }
 
     display() { }
-    bindElement() { }
-    bindEvent() { }
+    bindElements() { }
+    bindEvents() { }
     ready() { }
 }
